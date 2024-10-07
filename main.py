@@ -21,7 +21,7 @@ if __name__ == "__main__":
                     while(jugarUnoVsUno):
                         os.system('cls')
                         print(msj.tituloPvP)
-                        jg.UnoVsUno()
+                        us.crearUsuario()
                 case 2:
                     jugarUnoVsIa = True
                     while(jugarUnoVsIa):

@@ -1,11 +1,10 @@
 import os 
 import modules.utils as ut
 
-def crearUsuario(agregarUsuario):
+def crearUsuario(crearUsuario):
         usuario = input("Ingrese el nombre del usuario: ")
         nickname = input("Ingrese el nickname: ")
-        return
-        añadirUsuario = {
+        crearUsuario = {
             'nombre': usuario,
             'nickname1': nickname,     
         }
