@@ -22,7 +22,7 @@ if __name__ == "__main__":
                 case 1:
                     us.crearUsuarios(chachipun)
                 case 2:
-                    pass
+                    jg.piedraPapelTijera(chachipun)
                 case 3:
                     jugarUnoVsIa = True
                     while(jugarUnoVsIa):
