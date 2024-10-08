@@ -6,7 +6,7 @@ import modules.menu as mn
 import modules.juego as jg
 
 if __name__ == "__main__":
-    chachipun = []
+    MY_DATABASE = 'data/jugadores.json'
     isActive = True
     opMenu = 0
     while (isActive):
@@ -21,6 +21,8 @@ if __name__ == "__main__":
                     while(jugarUnoVsUno):
                         os.system('cls')
                         print(msj.tituloPvP)
+                        usuarios = us.cargarUsuarios()
+                        us.crearUsuarios(usuarios)
                         jg.usuarioVsUsuario()
                 case 2:
                     jugarUnoVsIa = True

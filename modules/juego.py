@@ -18,11 +18,8 @@ def determinarGanador(jugador1, eleccion1, jugador2, eleccion2):
         print(f"'{jugador2}' Gana!")
 
 def usuarioVsUsuario():
-    usuarios = us.crearUsuario()
 
-    if len(usuarios) < 2:
-        print("Se necesitan al menos 2 usuarios registrados para jugar.")
-        return
-    
-    print("\Usuarios registrados: ")
+
   
+#def usuarioVsMaquina():
+    pass
