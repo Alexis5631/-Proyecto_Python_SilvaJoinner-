@@ -1,12 +1,19 @@
 import os 
 import modules.utils as ut
+import modules.core as cr
 
 def crearUsuario(crearUsuario):
-        usuario = input("Ingrese el nombre del usuario: ")
+        usuarios = cr.ReadFile(nombre)
+        nombre = input("Ingrese el nombre del usuario: ")
         nickname = input("Ingrese el nickname: ")
         crearUsuario = {
-            'nombre': usuario,
-            'nickname1': nickname,     
+            'nombre': nombre,
+           'nickname1': nickname,     
         }
-        print("Usuarios registrados con exito.")
+        if nombre in usuarios:
+                print(f"El nickname '{nickname}' ya esta registrado.")
+        else:
+                usuarios.append(nombre)
+                cr.NewFile(usuarios)
+                print(f"Usuario '{nickname}' registrado exitosamente.")
 
