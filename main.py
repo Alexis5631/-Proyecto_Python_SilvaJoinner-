@@ -13,6 +13,7 @@ if __name__ == "__main__":
     isActive = True
     opMenu = 0
     while (isActive):
+        src = cr.ReadFile()
         try:
             ut.borrar_pantalla()
             print(msj.tituloPrincipal)
@@ -22,7 +23,13 @@ if __name__ == "__main__":
                 case 1:
                     us.crearUsuarios(chachipun)
                 case 2:
-                    jg.piedraPapelTijera(chachipun)
+                    ut.borrar_pantalla()
+                    us.mostrarJugadores()
+                    o1 = input('Ingrese el nickname del jugador 1: ')
+                    j1 = src[o1]["nickname"]
+                    o2 = input('Ingrese el nickname del jugador 2: ')
+                    j2 = src[o2]["nickname"]
+                    jg.unoVsUno(src, j1,j2)
                 case 3:
                     jugarUnoVsIa = True
                     while(jugarUnoVsIa):

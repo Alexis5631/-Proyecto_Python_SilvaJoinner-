@@ -34,3 +34,9 @@ def crearUsuarios(chachipun):
             continue
         else:
             break
+
+def mostrarJugadores():
+    gameData = cr.ReadFile()
+    print("Jugadores registrados:")
+    for nickname, datos in gameData.items():
+        print(f"Nickname: {nickname}, Nombre: {datos['nombre']}")

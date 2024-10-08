@@ -24,4 +24,3 @@ def checkFile(*param):
 def AddData(chachipun):
     with open(MY_DATABASE,"w") as rwf:
         json.dump(chachipun,rwf,indent=4)
-
