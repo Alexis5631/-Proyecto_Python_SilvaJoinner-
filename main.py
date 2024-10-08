@@ -4,46 +4,45 @@ import modules.utils as ut
 import modules.mensajes as msj
 import modules.menu as mn
 import modules.juego as jg
+import modules.core as cr
 
 if __name__ == "__main__":
-    MY_DATABASE = 'data/jugadores.json'
+    chachipun = {}
+    cr.MY_DATABASE = 'data/chachipun.json'
+    cr.checkFile(chachipun)
     isActive = True
     opMenu = 0
     while (isActive):
         try:
-            os.system('cls')
+            ut.borrar_pantalla()
             print(msj.tituloPrincipal)
             print(mn.menuPrincipal)
             opMenu = int(input(":)_"))
             match opMenu:
                 case 1:
-                    jugarUnoVsUno = True
-                    while(jugarUnoVsUno):
-                        os.system('cls')
-                        print(msj.tituloPvP)
-                        usuarios = us.cargarUsuarios()
-                        us.crearUsuarios(usuarios)
-                        jg.usuarioVsUsuario()
+                    us.crearUsuarios(chachipun)
                 case 2:
+                    pass
+                case 3:
                     jugarUnoVsIa = True
                     while(jugarUnoVsIa):
-                        os.system('cls')
+                        ut.borrar_pantalla()
                         print(msj.titulo1vsIA)
                         os.system('pause')
-                case 3:
+                case 4:
                     estadisticas = True
                     while(estadisticas):
-                        os.system('cls')
+                        ut.borrar_pantalla()
                         print(msj.tituloEstadisticas) 
                         os.system('pause')                  
-                case 4:
+                case 5:
                     pass
                 case _:
                     print("La opcion es incorrecta.")
                     os.system('pause')
         except ValueError:
             print("Error en la opcion ingresada")
-            os.system('cls')
+            ut.borrar_pantalla()
             continue
         
         

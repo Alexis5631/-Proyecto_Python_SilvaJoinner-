@@ -1,3 +1,6 @@
+import sys
+import os
+
 def validateData(message:str):
     global isAllow
     flagFunction = True
@@ -24,10 +27,23 @@ def validateResponse(message:str):
         if (accion not in opciones):
             print('La opcion que usted ingreso no esta permitida.......')
             validateData()
-        elif (accion== 'S'): 
+        elif (accion== 'S', 's'): 
             flagFunction = True
-        elif  (accion == 'N'):
+        elif  (accion == 'N', 'n'):
             flagFunction = False
         return flagFunction
     except TypeError:
         validateResponse(message)
+
+
+def borrar_pantalla():
+    if sys.platform == "linux" or sys.platform == "darwin":
+        os.system("clear")
+    else:
+        os.system("cls")
+
+def pausar_pantalla():
+    if sys.platform == "linux" or sys.platform == "darwin":
+        x = input("Presione una tecla para continuar...")
+    else:
+        os.system("pause")

@@ -1,42 +1,27 @@
-import os 
-import json
 import modules.utils as ut
+import modules.core as cr
+import modules.mensajes as msg
 
-
-MY_DATABASE = 'modules/data/jugadores.json'
-
-def cargarUsuarios():
-    try:
-        with open(MY_DATABASE, "r") as rf:
-            usuarios = json.load(rf)
-    except FileNotFoundError:
-        usuarios = {}
-    return usuarios
-        
-def guardarUsuario(usuarios):
-    with open(MY_DATABASE, "w") as wf:
-        json.dump(usuarios, wf, indent=4)
-
-
-def validarUsuarios(nickname, usuarios):
-        if nickname not in usuarios:
-              return True
-        else:
-              print(f"El nickname '{nickname}' ya esta registrado.")
-              return False
-              
-              
-
-def crearUsuarios(usuarios):
+def crearUsuarios(chachipun):
+    while True:
+        ut.borrar_pantalla()
+        print(msg.tituloRegistrar)
         nombre = input("Ingrese el nombre del usuario: ")
         nickname = input("Ingrese el nickname: ")
-        
         nuevoUsuario = {
             'nombre': nombre,
-           'nickname': nickname,     
+           'nickname': nickname,  
+           'partidasGanadas': 0,
+           'partidasPerdidas': 0,
+           'totalPuntos': 0,
+           'partidasGanadasIA': 0,
+           'partidasPerdidasIA': 0,
+           'totalPuntosIA': 0
         }
-        if validarUsuarios(nickname, usuarios):
-               print(f"Bienvenido {nickname}")
-               usuarios [nickname] = 'nuevoUsuario'
-               guardarUsuario(usuarios)
-               
+        chachipun[nickname] = nuevoUsuario
+        cr.AddData(chachipun)
+        confirmacion = input("Desea agregar otro usuario S(Si) N(No): ")
+        if confirmacion == ('S' or 's'):
+            continue
+        else:
+              break

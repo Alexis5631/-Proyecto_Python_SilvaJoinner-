@@ -1,0 +1,22 @@
+{
+    "zero": {
+        "nombre": "alexis",
+        "nickname": "zero",
+        "partidasGanadas": 0,
+        "partidasPerdidas": 0,
+        "totalPuntos": 0,
+        "partidasGanadasIA": 0,
+        "partidasPerdidasIA": 0,
+        "totalPuntosIA": 0
+    },
+    "chaps": {
+        "nombre": "jose",
+        "nickname": "chaps",
+        "partidasGanadas": 0,
+        "partidasPerdidas": 0,
+        "totalPuntos": 0,
+        "partidasGanadasIA": 0,
+        "partidasPerdidasIA": 0,
+        "totalPuntosIA": 0
+    }
+}
