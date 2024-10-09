@@ -5,6 +5,7 @@ import modules.mensajes as msj
 import modules.menu as mn
 import modules.juego as jg
 import modules.core as cr
+import modules.estadisticas as esta
 
 if __name__ == "__main__":
     chachipun = {}
@@ -29,24 +30,22 @@ if __name__ == "__main__":
                     j1 = src[o1]["nickname"]
                     o2 = input('Ingrese el nickname del jugador 2: ')
                     j2 = src[o2]["nickname"]
-                    jg.unoVsUno(src, j1,j2)
+                    ut.borrar_pantalla()
+                    jg.unoVsUno(j1,j2)
                 case 3:
-                    jugarUnoVsIa = True
-                    while(jugarUnoVsIa):
-                        ut.borrar_pantalla()
-                        print(msj.titulo1vsIA)
-                        os.system('pause')
+                    ut.borrar_pantalla()
+                    us.mostrarJugadores()
+                    o1 = input('Ingrese el nickname del jugador 1: ')
+                    j1 = src[o1]["nickname"]
+                    jg.jugadorVsIA(j1)
                 case 4:
-                    estadisticas = True
-                    while(estadisticas):
-                        ut.borrar_pantalla()
-                        print(msj.tituloEstadisticas) 
-                        os.system('pause')                  
+                    esta.estadisticas()
                 case 5:
-                    pass
+                    print("Saliendo del programa....")
+                    break
                 case _:
                     print("La opcion es incorrecta.")
-                    os.system('pause')
+                    ut.pausar_pantalla()
         except ValueError:
             print("Error en la opcion ingresada")
             ut.borrar_pantalla()
